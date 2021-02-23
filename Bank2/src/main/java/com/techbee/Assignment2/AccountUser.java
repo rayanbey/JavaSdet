@@ -19,6 +19,10 @@ public class AccountUser {
         setPhoneNumber(phoneNumber);
     }
 
+    public AccountUser() {
+
+    }
+
     public double getAccountNumber() {
         return accountNumber;
     }
@@ -66,7 +70,7 @@ public class AccountUser {
     public void setFirstName(String firstName) {
         if (firstName.length() > 1) {
             this.firstName = firstName;
-            System.out.println("Your new firstName is : " + this.firstName);
+            //System.out.println("Your new firstName is : " + this.firstName);
         }
         else
             System.out.println(firstName+":Invalid firstName");
@@ -79,7 +83,7 @@ public class AccountUser {
     public void setLastName(String lastName) {
         if (lastName.length() > 1) {
             this.lastName = lastName;
-            System.out.println("Your new lastName is : "+this.lastName);
+            //System.out.println("Your new lastName is : "+this.lastName);
         }
         else
             System.out.println(lastName+":Invalid lastName");
