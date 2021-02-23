@@ -61,6 +61,20 @@ public class AccountUserJDBC implements IAccountUserJDBC {
 
     @Override
     public void updateAccountUserAccountNumber(AccountUser User, double AccountNumber) {
+        Connection connection = (Connection) ConnectionFactory.getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement("UPDATE AccountUser SET accountNumber="+AccountNumber+" WHERE accountNumber =?" );
+            ps.setDouble(1, User.getAccountNumber());
+
+            int i = ps.executeUpdate();
+
+            if(i == 1) {
+                System.out.println("Update was successful!");
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
 
     }
 

@@ -60,10 +60,10 @@ public class Main {
     public static void TestJDBC()
     {Scanner scan=new Scanner(System.in);
         AccountUserJDBC userService2=new AccountUserJDBC();
-        System.out.println("Enter a unique AccountNumber");
+        /*System.out.println("Enter a unique AccountNumber for Deep");
         double accountNumber= scan.nextDouble();
         AccountUser A1 = new AccountUser
-                (accountNumber, 50, "Ali", "Beydoun", "ali@gmail.com","3136851552");
+                (accountNumber, 50, "Deep", "Beydoun", "ali@gmail.com","3136851552");
         userService2.createAccountUser(A1);
         System.out.println("testing getAllAccountusers() function ");
         for (AccountUser AU:  userService2.getAllAccountusers()
@@ -80,7 +80,14 @@ public class Main {
         }
         System.out.println("testing getAccountUserByAccountNumber(double an) function: Enter any  account number from the list ");
         double an2=scan.nextDouble();
-        System.out.println((userService2.getAccountUserByAccountNumber(an2)).toString());
+        System.out.println((userService2.getAccountUserByAccountNumber(an2)).toString());*/
+        System.out.println("testing updateAccountUserAccountNumber(AccountUser User, double AccountNumber):Enter any  account number from the list ");
+        double an3=scan.nextDouble();
+        System.out.println("Enter the new account number to update it");
+        double newaccountnumber=scan.nextDouble();
+
+        userService2.updateAccountUserAccountNumber((userService2.getAccountUserByAccountNumber(an3)),newaccountnumber);
+
         return;
     }
 }
